@@ -1,0 +1,88 @@
+<header class="bg-[#162556ef] border-b border-[#00000011] fixed top-0 z-50 w-full">
+    <div class="mx-[60px] px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-24">
+            <!-- Brand -->
+            <a href="/" class="flex items-center gap-3 text-white">
+                <svg class="h-10 w-10 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                    aria-hidden="true" focusable="false" fill="currentColor">
+                    <g data-name="07-law">
+                        <path
+                            d="M25 48a1 1 0 0 1-.447-.1l-16-8A1 1 0 0 1 8 39a3.8 3.8 0 0 1 5.1-3.573l7.873 3.473.5-.25A3.036 3.036 0 0 1 21 37.013 2.948 2.948 0 0 1 23.888 34h3.152c.634-.909 2.416-2 7.31-2 7.1 0 7.65 2.3 7.65 3v10a1 1 0 0 1-.868.991C38.607 46.327 25.967 48 25 48zm-14.909-9.573 15.118 7.559c1.506-.129 9.364-1.144 14.791-1.862v-8.981C39.847 34.95 38.86 34 34.35 34c-4.661 0-5.559 1.014-5.662 1.16a1 1 0 0 1-.988.84h-3.812a1.007 1.007 0 0 0 0 2H31v2h-7.112a2.878 2.878 0 0 1-.545-.053l-1.9.948a1 1 0 0 1-.85.02l-8.241-3.633a1.811 1.811 0 0 0-2.265 1.145zM28.7 35zm0 0zm0 0z" />
+                        <path
+                            d="M47 47h-6a1 1 0 0 1-1-1V33a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1zm-5-2h4V34h-4zM13 30a7.008 7.008 0 0 1-7-7 1 1 0 0 1 1-1h12a1 1 0 0 1 1 1 7.008 7.008 0 0 1-7 7zm-4.9-6a5 5 0 0 0 9.8 0z" />
+                        <path
+                            d="M18.081 23.394 13 11.539 7.919 23.394l-1.838-.788 6-14a1 1 0 0 1 1.838 0l6 14zM35 30a7.008 7.008 0 0 1-7-7 1 1 0 0 1 1-1h12a1 1 0 0 1 1 1 7.008 7.008 0 0 1-7 7zm-4.9-6a5 5 0 0 0 9.8 0z" />
+                        <path d="M40.081 23.394 35 11.539l-5.081 11.855-1.838-.788 6-14a1 1 0 0 1 1.838 0l6 14z" />
+                        <path d="M13 8h22v2H13zM24 6a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm0-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1z" />
+                        <path d="M23 5h2v25h-2z" />
+                        <path d="m16.707 38.707-1.414-1.414 8-8a1 1 0 0 1 1.414 0l4 4-1.414 1.414L24 31.414z" />
+                    </g>
+                </svg>
+
+                <div class="leading-tight">
+                    <p class="text-[28px] font-semibold text-white">Parthiv Joshi, Advocate</p>
+                    <!-- <p class="text-s text-white -mt-0.5">
+                        Corporate
+                    </p> -->
+                </div>
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                @for (link of navLinks; track link.label) {
+                <a [routerLink]="link.route" class="text-xl text-white hover:text-white">
+                    {{ link.label }}
+                </a>
+                }
+            </nav>
+
+            <!-- Actions -->
+            <!-- <div class="hidden md:flex items-center gap-4">
+                <a routerLink="/consultation"
+                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md shadow-sm bg-blue-950 text-white hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+                    Consultation
+                </a>
+            </div> -->
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button (click)="toggleMenu()" id="mobile-menu-button" [attr.aria-expanded]="mobileMenuOpen"
+                    aria-controls="mobile-menu" class="p-2 rounded-md text-white hover:bg-slate-100">
+                    <span class="sr-only">Open main menu</span>
+                    @if (!mobileMenuOpen) {
+                    <!-- Hamburger -->
+                    <!-- Hamburger -->
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    } @else {
+                    <!-- Close -->
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    }
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu (animated with max-height + opacity) -->
+    <div id="mobile-menu" #mobileMenu
+        class="md:hidden border-t border-[#00000008] overflow-hidden transition-[max-height,opacity] duration-300 ease-out"
+        [style.maxHeight]="menuMaxHeight" [class.opacity-100]="mobileMenuOpen" [class.opacity-0]="!mobileMenuOpen"
+        [attr.aria-hidden]="!mobileMenuOpen" [class.pointer-events-none]="!mobileMenuOpen">
+        <div class="px-4 pt-3 pb-4 space-y-2">
+            @for (link of navLinks; track link.label) {
+            <a [routerLink]="link.route" class="block text-lg text-white px-2 py-2 rounded hover:bg-slate-50">
+                {{ link.label }}
+            </a>
+            }
+            <!-- <a routerLink="/consultation"
+                class="block mt-2 text-center px-3 py-2 rounded-md bg-blue-950 text-white font-medium">
+                Consultation
+            </a> -->
+        </div>
+    </div>
+</header>

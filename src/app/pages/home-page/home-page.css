@@ -1,0 +1,9 @@
+stepper-container {
+    overflow: hidden;
+}
+
+.stepper-container {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

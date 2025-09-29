@@ -1,0 +1,123 @@
+<!-- Page -->
+<div class="text-blue-950 min-h-screen">
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Hero -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-2">
+                <h1 class="text-4xl font-extrabold mb-4 text-blue-950">{{ name }}</h1>
+                <p class="lead text-blue-950/90 max-w-3xl">
+                    Principal Attorney at <span class="font-medium">{{ practice }}</span>. I help businesses navigate
+                    complex commercial disputes,
+                    structure transactions, and achieve pragmatic regulatory outcomes. My approach blends strategic
+                    thinking with practical litigation and negotiation experience.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-4">
+                    <a routerLink="/contact"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-blue-950 text-white rounded-lg font-medium hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-950">
+                        Contact me
+                    </a>
+                    <a [href]="cv"
+                        class="inline-flex items-center gap-2 px-6 py-3 border border-blue-950 text-blue-950 rounded-lg hover:bg-blue-950/10"
+                        download>
+                        Download CV
+                    </a>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-6 bg-white rounded-xl shadow-lg">
+                        <h3 class="font-semibold text-blue-950">Practice Focus</h3>
+                        <p class="mt-2 text-sm text-blue-950/90">
+                            Commercial litigation, corporate transactions, regulatory compliance, employment matters,
+                            and IP strategy for technology companies.
+                        </p>
+                        <ul class="mt-3 list-disc ml-5 text-sm text-blue-950">
+                            <li>Dispute resolution & litigation strategy</li>
+                            <li>Mergers & acquisitions and governance</li>
+                            <li>Regulatory risk, licensing & policy</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-xl shadow-lg">
+                        <h3 class="font-semibold text-blue-950">Why clients choose me</h3>
+                        <ul class="mt-3 list-disc ml-5 text-sm text-blue-950">
+                            <li>Practical, business-first advice that balances risk and cost</li>
+                            <li>Clear communication — no legalese</li>
+                            <li>Track record of negotiated exits and successful dispute resolutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo + quick facts -->
+            <aside class="flex flex-col items-center gap-6">
+                <img [src]="photo" alt="Portrait of {{ name }}" class="w-56 h-56 object-cover rounded-xl shadow-lg" />
+                <div class="w-full p-6 bg-white rounded-xl text-center shadow-lg">
+                    <div class="text-sm text-blue-950/70">Principal Attorney</div>
+                    <div class="mt-2 font-semibold text-blue-950">{{ name }}</div>
+                    <div class="mt-3 text-sm text-blue-950/80">Admitted: State Bar • Year</div>
+                    <div class="mt-4 flex gap-2 justify-center">
+                        <a [href]="'mailto:' + email" class="text-sm text-blue-950/90 hover:underline">{{ email }}</a>
+                        <span class="text-blue-950/40">•</span>
+                        <a [href]="'tel:' + phone" class="text-sm text-blue-950/90 hover:underline">{{ phone }}</a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Experience / Timeline -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-semibold text-blue-950 mb-6">Experience</h2>
+            <div class="space-y-6">
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="text-lg font-semibold text-blue-950">Principal Attorney — {{ practice }}</div>
+                            <div class="text-sm text-blue-950/70">2019 — Present</div>
+                            <p class="mt-3 text-sm text-blue-950">
+                                Lead counsel on commercial litigation and corporate transactions. Manage a portfolio of
+                                clients across fintech, manufacturing and professional services.
+                            </p>
+                        </div>
+                        <div class="text-sm text-blue-950/70">City, Country</div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="text-lg font-semibold text-blue-950">Senior Associate — Firm Name</div>
+                            <div class="text-sm text-blue-950/70">2015 — 2019</div>
+                            <p class="mt-3 text-sm text-blue-950">
+                                Managed high-value litigation files, conducted multi-jurisdictional discovery, and led
+                                transactional due diligence.
+                            </p>
+                        </div>
+                        <div class="text-sm text-blue-950/70">City, Country</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Admissions -->
+        <section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <h3 class="text-lg font-semibold text-blue-950">Education</h3>
+                <ul class="mt-3 text-sm text-blue-950">
+                    <li><strong>LL.M., Corporate Law</strong>, University Name — Year</li>
+                    <li class="mt-2"><strong>J.D.</strong>, Law School Name — Year</li>
+                    <li class="mt-2"><strong>B.A.</strong>, Major, University — Year</li>
+                </ul>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl shadow-lg">
+                <h3 class="text-lg font-semibold text-blue-950">Admissions & Memberships</h3>
+                <ul class="mt-3 text-sm text-blue-950">
+                    <li>Bar of State / Federal Courts</li>
+                    <li>Member, Bar Association</li>
+                    <li>Arbitrator Panel — Organization</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,20 @@
+<div class="flex-1 overflow-hidden stepper-container" (wheel)="onScroll($event)" (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+    @switch (currentStep) {
+    @case (1) {
+    <div class="step-content flex items-center justify-center" @fadeAnimation>
+        <app-hero></app-hero>
+    </div>
+    }
+    @case (2) {
+    <div class="step-content flex items-center justify-center" @fadeAnimation>
+        <app-practice-areas></app-practice-areas>
+    </div>
+    }
+    @case (3) {
+    <div class="step-content flex items-center justify-center" @fadeAnimation>
+        <app-blogs></app-blogs>
+    </div>
+    }
+    }
+</div>

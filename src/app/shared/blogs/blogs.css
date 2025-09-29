@@ -1,0 +1,70 @@
+/* src/styles.css */
+/* set brand colors once */
+:root {
+    --brand-blue: #0b2545;
+    /* choose exact hex you want */
+    --brand-blue-dark: #09203a;
+    --brand-dot: #cbd5e1;
+    /* slate-300-like */
+}
+
+/* scope using the styleClass you pass to p-carousel (example used earlier: styleClass="custom-carousel") */
+.custom-carousel .p-carousel-prev,
+.custom-carousel .p-carousel-next {
+    background: var(--brand-blue);
+    color: #fff;
+    border-radius: 9999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(11, 37, 69, 0.12);
+    border: none;
+    /* override default border */
+}
+
+/* hover */
+.custom-carousel .p-carousel-prev:hover,
+.custom-carousel .p-carousel-next:hover {
+    background: var(--brand-blue-dark);
+    color: #fff;
+}
+
+/* position adjustments (tweak values if they overlap layout) */
+.custom-carousel .p-carousel-prev {
+    left: -1.5rem;
+    /* move left */
+}
+
+.custom-carousel .p-carousel-next {
+    right: -1.5rem;
+    /* move right */
+}
+
+/* indicator dots */
+.custom-carousel .p-carousel-indicators .p-carousel-indicator button {
+    background: var(--brand-dot);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    padding: 0;
+    border: none;
+    transition: transform .18s ease, background .18s ease;
+}
+
+/* active dot */
+.custom-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background: var(--brand-blue);
+    transform: scale(1.1);
+}
+
+/* optional: override PrimeNG button icon color inside prev/next */
+.custom-carousel .p-carousel-prev .p-button-icon,
+.custom-carousel .p-carousel-next .p-button-icon,
+.custom-carousel .p-carousel-prev svg,
+.custom-carousel .p-carousel-next svg {
+    color: #fff;
+    stroke: currentColor;
+    fill: currentColor;
+}
