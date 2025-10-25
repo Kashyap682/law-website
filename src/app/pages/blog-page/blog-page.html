@@ -1,0 +1,67 @@
+<div class="max-w-4xl mx-auto p-4">
+    <!-- Single blog view -->
+    @if (currentBlog) {
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h1 class="text-2xl font-semibold mb-2">{{ currentBlog.title }}</h1>
+
+        @if (currentBlog.date) {
+        <p class="text-xs text-blue-800 mb-2">{{ currentBlog.date }}</p>
+        }
+
+        <!-- @if (currentBlog.image) {
+        <img [src]="'/assets/images/' + currentBlog.image" [alt]="currentBlog.title"
+            class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" />
+        } -->
+
+        <p class="text-gray-600 mb-4">
+            {{ currentBlog.abstract || currentBlog.excerpt }}
+        </p>
+
+        <a [href]="currentBlog.url" target="_blank" rel="noopener noreferrer"
+            class="inline-block px-4 py-2 rounded-xl border hover:shadow transition">
+            Open original
+        </a>
+
+        <a [routerLink]="['/blogs']"
+            class="ml-3 inline-block px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition">
+            Back to all blogs
+        </a>
+    </div>
+    } @else {
+    <!-- List view -->
+    <h2 class="text-xl font-semibold mb-4">Latest Blogs</h2>
+
+    <div class="grid gap-4">
+        @for (blog of blogs; track blog.id) {
+        <div class="bg-white rounded-2xl p-5 shadow flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div class="mb-3 sm:mb-0">
+                <h3 class="text-lg font-medium">
+                    <a [routerLink]="['/blog', blog.slug]" class="hover:text-blue-800 transition-colors">
+                        {{ blog.title }}
+                    </a>
+                </h3>
+
+                @if (blog.date) {
+                <p class="text-sm text-gray-500 mt-1">{{ blog.date }}</p>
+                }
+
+                <p class="text-sm text-gray-600 mt-1">
+                    {{ blog.abstract || blog.excerpt }}
+                </p>
+            </div>
+
+            <div class="flex gap-2 items-center">
+                <a [routerLink]="['/blog', blog.slug]" class="px-4 py-2 rounded-lg border hover:bg-gray-50 transition">
+                    View
+                </a>
+
+                <a [href]="blog.url" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-2 rounded-lg border hover:bg-gray-50 transition">
+                    Original
+                </a>
+            </div>
+        </div>
+        }
+    </div>
+    }
+</div>

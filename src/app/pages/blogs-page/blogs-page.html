@@ -3,7 +3,9 @@
         <!-- Section header -->
         <div class="mb-8 text-center">
             <p class="text-sm font-medium text-blue-950/90">Insights & Articles</p>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">From our blog</h2>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">
+                From our blog
+            </h2>
             <p class="mt-2 text-sm text-slate-600 max-w-2xl mx-auto">
                 Practical insights on corporate law, litigation strategies, and legal developments.
             </p>
@@ -14,18 +16,17 @@
             @for (blog of blogs; track blog.id) {
             <article class="bg-white rounded-2xl border border-[#00000006] shadow-sm overflow-hidden flex flex-col">
                 <!-- image -->
-                <div class="h-48 w-full overflow-hidden">
-                    <img src="{{ blog.image }}" alt="{{ blog.title }}" class="w-full h-full object-cover" onerror=""
-                        loading="lazy" />
-                </div>
+                <!-- <div class="h-48 w-full overflow-hidden">
+                    <img [src]="blog.image" [alt]="blog.title" class="w-full h-full object-cover" loading="lazy" />
+                </div> -->
 
                 <!-- content -->
                 <div class="p-5 flex-1 flex flex-col">
                     <p class="text-xs text-blue-800 font-medium">{{ blog.date }}</p>
 
                     <h3 class="mt-2 text-lg font-semibold text-slate-900">
-                        <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-blue-800 transition-colors">
+                        <a [routerLink]="['/blog', blog.slug]"
+                            class="hover:text-blue-800 transition-colors cursor-pointer">
                             {{ blog.title }}
                         </a>
                     </h3>
@@ -33,8 +34,8 @@
                     <p class="text-sm text-slate-600 mt-3 flex-1">{{ blog.excerpt }}</p>
 
                     <div class="mt-4">
-                        <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer"
-                            class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md font-semibold text-white bg-blue-950 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition"
+                        <a [routerLink]="['/blog', blog.slug]"
+                            class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md font-semibold text-white bg-blue-950 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition cursor-pointer"
                             aria-label="Read article {{ blog.title }}">
                             Read more
                             <svg class="h-4 w-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"

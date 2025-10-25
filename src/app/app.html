@@ -1,4 +1,24 @@
-<app-header></app-header>
-<div class="mt-[150px]"></div>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<!-- Disclaimer appears before all site content -->
+@if (!agreed()) {
+<app-disclaimer (agreed)="onAgreed()"></app-disclaimer>
+}
+
+<div class="relative">
+    <app-header></app-header>
+    <div class="mt-[150px]"></div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+
+    <!-- Hazy overlay when disclaimer is active -->
+    @if (!agreed()) {
+    <div class="fixed inset-0 z-40 backdrop-blur-sm bg-white/40 pointer-events-none transition-all duration-300"></div>
+    }
+</div>
+
+<!-- Main site content -->
+<!-- <div [class.pointer-events-none]="!agreed()" [class.opacity-5]="!agreed()">
+    <app-header></app-header>
+    <div class="mt-[150px]"></div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div> -->

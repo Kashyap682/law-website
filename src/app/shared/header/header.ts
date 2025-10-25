@@ -14,7 +14,7 @@ export class Header implements AfterViewInit {
 
   navLinks = [
     { label: 'Home', route: '/home' },
-    { label: 'Practice Areas', route: '/practice-areas' },
+    // { label: 'Practice Areas', route: '/practice-areas' },
     { label: 'Blogs', route: '/blogs' },
     { label: 'About', route: '/about' },
     // { label: 'Contact', route: '/contact' }

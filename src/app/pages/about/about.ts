@@ -13,11 +13,11 @@ export class About {
   year = new Date().getFullYear();
 
   // replace these with your real values or fetch them from a CMS
-  name = 'Your Name, Esq.';
+  name = 'Parthiv Joshi, Advocate';
   practice = 'Practice Name';
-  email = 'you@example.com';
-  phone = '+1 (234) 567-890';
-  photo = 'lawyer.png'; // update path in assets
+  email = 'adv.parthivjoshi@gmail.com';
+  phone = '+91 99042 76969';
+  photo = 'pt.jpg'; // update path in assets
   cv = 'YourName_CV.pdf'; // update path in assets
 
   constructor(

@@ -6,6 +6,7 @@ import { About } from './pages/about/about';
 import { Terms } from './pages/terms/terms';
 import { Disclaimer } from './pages/disclaimer/disclaimer';
 import { HomePage } from './pages/home-page/home-page';
+import { BlogPage } from './pages/blog-page/blog-page';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -16,4 +17,6 @@ export const routes: Routes = [
     { path: 'terms', component: Terms },
     { path: 'disclaimer', component: Disclaimer },
     { path: 'homev2', component: HomePage },
+    { path: 'blog', component: BlogPage },
+    { path: 'blog/:slug', component: BlogPage },
 ];

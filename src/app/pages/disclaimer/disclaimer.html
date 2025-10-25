@@ -1,22 +1,44 @@
-<div class="max-w-3xl mx-auto px-6 py-12 bg-white rounded-xl shadow">
-    <h1 class="text-3xl font-bold text-blue-950 mb-6">Legal Disclaimer</h1>
+<div class="fixed inset-0 z-50 flex items-center justify-center">
+    <div class="absolute inset-0 bg-black/60"></div>
 
-    <p class="mb-6 text-blue-950">
-        The materials on this website are for general informational purposes only and do not constitute legal advice.
-        Every situation is different, and you should consult an attorney for advice regarding your specific matter.
-    </p>
+    <div class="relative z-10 max-w-5xl w-full mx-4 bg-white rounded-2xl shadow-xl p-6 sm:p-8" role="dialog"
+        aria-modal="true" aria-labelledby="disclaimer-title">
+        <h2 id="disclaimer-title" class="text-4xl font-semibold mb-2 text-center">Disclaimer</h2>
 
-    <p class="mb-6 text-blue-950">
-        Past results and testimonials do not guarantee a similar outcome in your case.
-    </p>
+        <div class="mb-4 text-lg text-slate-700">
+            <p class="my-2">
+                The Bar Council of India prohibits solicitation and advertising by advocates in any form or manner. By
+                accessing this website, www.advparthivjoshi.in, you acknowledge and confirm that you are seeking
+                information about the Office of Adv. Parthiv Joshi (“the Office”) of your own accord and that there has
+                been no solicitation, advertisement, invitation, or inducement of any kind.
+            </p>
+            <p class="my-2">
+                The content on this website is for general informational purposes only; information that is otherwise
+                available on the internet, various public platforms and social media. It should not be construed as
+                soliciting or advertisement. It does not constitute legal advice or opinion, and does not create or
+                invite any lawyer-client relationship. You should seek independent legal advice for any specific issue.
+            </p>
+            <p class="my-2">
+                While all efforts are made to ensure accuracy, the Office is not responsible for any errors or
+                consequences arising from reliance on this information.
+            </p>
+            <p class="my-2">
+                All website content is the intellectual property of Adv. Parthiv Joshi.
+            </p>
+            <p class="my-2">
+                By clicking “I AGREE” you confirm that you understand and accept the <a class="text-blue-900"
+                    href="">Terms of Use</a> of this
+                website.
+            </p>
+        </div>
 
-    <p class="mb-6 text-blue-950">
-        I am licensed to practice law in [State(s)/Jurisdiction(s)]. This website is not intended to solicit clients
-        outside those jurisdictions.
-    </p>
-
-    <p class="mb-6 text-blue-950">
-        Sending a message through this website or email does not create an attorney-client relationship. That
-        relationship is established only by a signed engagement agreement.
-    </p>
+        <div class="flex gap-3 justify-end">
+            <button (click)="onDecline()" class="px-4 py-2 rounded-lg border border-slate-300 hover:bg-slate-50">
+                DECLINE
+            </button>
+            <button (click)="onAgree()" class="px-4 py-2 rounded-lg bg-blue-800 text-white hover:opacity-95" autofocus>
+                I AGREE
+            </button>
+        </div>
+    </div>
 </div>
