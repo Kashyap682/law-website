@@ -1,9 +1,10 @@
-<header class="bg-[#162556ef] border-b border-[#00000011] fixed top-0 z-50 w-full">
+<header class="bg-[#F2F0EFAA] border-b border-[#00000011] fixed top-0 z-50 w-full">
     <div class="mx-[60px] px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-24">
+        <div class="flex items-center justify-between h-25">
             <!-- Brand -->
-            <a href="/" class="flex items-center gap-3 text-white">
-                <svg class="h-10 w-10 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+            <a href="/" class="flex items-center gap-3">
+                <img src="card.png" alt="Law firm banner" loading="lazy" class="h-25" />
+                <!-- <svg class="h-10 w-10 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
                     aria-hidden="true" focusable="false" fill="currentColor">
                     <g data-name="07-law">
                         <path
@@ -17,10 +18,10 @@
                         <path d="M23 5h2v25h-2z" />
                         <path d="m16.707 38.707-1.414-1.414 8-8a1 1 0 0 1 1.414 0l4 4-1.414 1.414L24 31.414z" />
                     </g>
-                </svg>
+                </svg> -->
 
                 <div class="leading-tight">
-                    <p class="text-[28px] font-semibold text-white">Parthiv Joshi, Advocate</p>
+                    <!-- <p class="text-[28px] font-semibold">Parthiv Joshi, Advocate</p> -->
                     <!-- <p class="text-s text-white -mt-0.5">
                         Corporate
                     </p> -->
@@ -30,7 +31,7 @@
             <!-- Desktop nav -->
             <nav class="hidden md:flex items-center gap-8">
                 @for (link of navLinks; track link.label) {
-                <a [routerLink]="link.route" class="text-xl text-white hover:text-white">
+                <a [routerLink]="link.route" class="text-xl">
                     {{ link.label }}
                 </a>
                 }
